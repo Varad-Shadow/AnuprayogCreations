@@ -15,14 +15,14 @@ export default function Portfolio() {
   }, [])
 
   return (
-    <div className="min-h-screen pt-32 pb-20 px-6 relative z-10 pointer-events-auto">
+    <div className="min-h-screen pt-28 md:pt-32 pb-16 md:pb-20 px-4 sm:px-6 relative z-10 pointer-events-auto">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 md:mb-20">
           <span className="section-tag mb-6 inline-block">Our Work</span>
-          <h1 className="font-display font-bold text-5xl md:text-7xl text-slate-900 tracking-tight">
+          <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-7xl text-slate-900 tracking-tight">
             Selected <span className="text-indigo-600">Projects</span>
           </h1>
-          <p className="mt-6 text-slate-600 text-xl max-w-2xl mx-auto font-normal">
+          <p className="mt-6 text-slate-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto font-normal">
             A showcase of our finest work across mobile, web, desktop and data engineering.
           </p>
         </div>
@@ -32,7 +32,7 @@ export default function Portfolio() {
           {PROJECTS.map((project) => (
             <div 
               key={project.id} 
-              className={`relative w-full rounded-3xl overflow-hidden break-inside-avoid group shadow-[0_8px_30px_rgb(0,0,0,0.06)] bg-slate-100 border border-white/60 ${project.height}`}
+              className={`relative w-full rounded-2xl md:rounded-3xl overflow-hidden break-inside-avoid group shadow-[0_8px_30px_rgb(0,0,0,0.06)] bg-slate-100 border border-white/60 ${project.height}`}
             >
               <img 
                 src={project.img} 
@@ -42,12 +42,12 @@ export default function Portfolio() {
               />
               
               {/* Glass Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-5 md:p-8">
+                <div className="transform md:translate-y-8 md:group-hover:translate-y-0 transition-transform duration-500">
                   <span className="text-indigo-300 font-bold tracking-wider text-sm uppercase mb-2 block">
                     {project.category}
                   </span>
-                  <h3 className="text-white font-bold text-2xl mb-4">{project.title}</h3>
+                  <h3 className="text-white font-bold text-xl md:text-2xl mb-3 md:mb-4">{project.title}</h3>
                   <button className="px-6 py-2 bg-white/20 hover:bg-white/30 backdrop-blur-md text-white rounded-full font-semibold transition-colors text-sm border border-white/20">
                     View Case Study
                   </button>

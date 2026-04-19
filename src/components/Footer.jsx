@@ -5,20 +5,20 @@ import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react'
 export default function Footer() {
   const year = new Date().getFullYear()
   return (
-    <footer className="relative z-10 pt-20 pb-8 pointer-events-auto">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="glass-panel p-12 md:p-16 rounded-[3rem] mb-8 border border-white/60 bg-white/70 backdrop-blur-2xl">
+    <footer className="relative z-10 pt-14 md:pt-20 pb-8 pointer-events-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="glass-panel p-7 sm:p-10 md:p-16 rounded-[2rem] md:rounded-[3rem] mb-8 border border-white/60 bg-white/70 backdrop-blur-2xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
             
             {/* Brand Column */}
             <div className="lg:col-span-2">
-              <Link to="/" className="inline-block font-display font-black text-3xl text-slate-900 tracking-tighter mb-6">
+              <Link to="/" className="inline-block font-display font-black text-2xl sm:text-3xl text-slate-900 tracking-tighter mb-6">
                 Anuprayog<span className="text-indigo-600">.</span>
               </Link>
-              <p className="text-slate-600 text-lg leading-relaxed font-normal pr-8 mb-8">
+              <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-normal pr-0 sm:pr-8 mb-8">
                 Technology Partner for Business. We build digital experiences that drive growth, streamline operations, and exceed expectations.
               </p>
-              <div className="flex gap-4">
+              <div className="flex gap-3 sm:gap-4 flex-wrap">
                 {['LinkedIn', 'Twitter', 'Instagram'].map(s => (
                   <a key={s} href="#" className="px-5 py-2.5 rounded-full border border-slate-200 text-sm font-semibold text-slate-600 hover:border-indigo-200 hover:bg-indigo-50 hover:text-indigo-600 transition-all shadow-sm">
                     {s}
@@ -66,7 +66,7 @@ export default function Footer() {
                     <div className="w-10 h-10 rounded-full bg-slate-100 group-hover:bg-indigo-100 flex items-center justify-center mr-4 transition-colors">
                       <Mail className="w-4 h-4 text-slate-600 group-hover:text-indigo-600" />
                     </div>
-                    <span className="font-medium">contact@anuprayogcreations.in</span>
+                    <span className="font-medium break-all">contact@anuprayogcreations.in</span>
                   </a>
                 </li>
                 <li className="flex items-center text-slate-600">
@@ -81,7 +81,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center px-8 text-sm font-medium text-slate-500">
+        <div className="flex flex-col md:flex-row justify-between items-center px-2 sm:px-8 text-sm font-medium text-slate-500 text-center md:text-left">
           <p>© {year} Anuprayog Creations. All rights reserved.</p>
           <p className="mt-2 md:mt-0">Built with <span className="text-red-500 mx-1">♥</span> in Pune, India</p>
         </div>

@@ -55,14 +55,14 @@ export default function Home() {
   return (
     <div className="w-full relative pointer-events-auto">
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-32 lg:pt-0">
-        <div className="max-w-7xl mx-auto px-6 w-full relative z-10 flex flex-col lg:w-3/5">
+      <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-28 md:pt-32 lg:pt-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10 flex flex-col lg:w-3/5">
           <div className="hero-content">
-            <h1 ref={heroTextRef} className="font-display font-bold text-5xl md:text-7xl xl:text-[5.5rem] leading-[1.1] text-slate-900 mb-8 tracking-tight">
+            <h1 ref={heroTextRef} className="font-display font-bold text-4xl sm:text-5xl md:text-7xl xl:text-[5.5rem] leading-[1.1] text-slate-900 mb-6 md:mb-8 tracking-tight">
               {renderSplitText("Your Trusted Technology partner for Business")}
             </h1>
             
-            <button className="btn-primary group relative overflow-hidden mt-4 shadow-[0_8px_30px_rgb(0,0,0,0.1)]">
+            <button className="btn-primary group relative overflow-hidden mt-2 md:mt-4 shadow-[0_8px_30px_rgb(0,0,0,0.1)] w-full sm:w-auto text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">
               <span className="relative z-10 font-bold tracking-wider uppercase text-white">WELCOME TO ANUPRAYOG</span>
               <div className="absolute inset-0 bg-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
@@ -71,36 +71,36 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-32 relative z-10">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
-          <div className="glass-panel p-10 md:p-14 rounded-[3rem]">
+      <section id="about" className="py-20 md:py-32 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 md:gap-20 items-center">
+          <div className="glass-panel p-8 sm:p-10 md:p-14 rounded-[2rem] md:rounded-[3rem]">
             <span className="section-tag mb-6 inline-block">Fresh creative minds</span>
-            <h2 className="font-display font-bold text-4xl md:text-5xl mb-8 text-slate-900 tracking-tight">
+            <h2 className="font-display font-bold text-3xl md:text-5xl mb-8 text-slate-900 tracking-tight">
               Reasons to <span className="text-indigo-600">choose</span>
             </h2>
             <div className="space-y-6">
-              <p className="text-slate-600 text-lg leading-relaxed font-normal">
+              <p className="text-slate-600 text-base md:text-lg leading-relaxed font-normal">
                 We are focusing to become a pioneer in providing Web Design, Web Development Services, Mobile Apps Development, Desktop App Development, E-Commerce Web Testing services globally within the next 5 years. We excel in delivering outstanding / world-class RESULTS. We exceed our customers' expectations every time.
               </p>
-              <p className="text-slate-600 text-lg leading-relaxed font-normal">
+              <p className="text-slate-600 text-base md:text-lg leading-relaxed font-normal">
                 Our customers and partners can always trust us to conduct business with honesty and integrity. We are dependable and reliable in everything we do. We always deliver what we promise and we do it on time. We believe that you care for your business. We take your unbaked app ideas to a new height and turn it into user-engaging products.
               </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-6 h-[600px]">
-            <div className="h-full flex items-end pb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 h-auto">
+            <div className="h-full flex items-end sm:pb-12">
               <img 
                 src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" 
                 alt="Modern Workspace"
-                className="w-full h-4/5 object-cover rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-transform duration-700 hover:scale-[1.02] border border-white/40"
+                className="w-full h-[280px] sm:h-4/5 object-cover rounded-[2rem] md:rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-transform duration-700 hover:scale-[1.02] border border-white/40"
               />
             </div>
-            <div className="h-full flex items-start pt-12">
+            <div className="h-full flex items-start sm:pt-12">
               <img 
                 src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80" 
                 alt="Technology Architecture"
-                className="w-full h-4/5 object-cover rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-transform duration-700 hover:scale-[1.02] border border-white/40"
+                className="w-full h-[280px] sm:h-4/5 object-cover rounded-[2rem] md:rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-transform duration-700 hover:scale-[1.02] border border-white/40"
               />
             </div>
           </div>
@@ -108,20 +108,20 @@ export default function Home() {
       </section>
 
       {/* Services Section: Premium Bento Box */}
-      <section id="services-trigger" className="py-32 relative z-10">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="font-display font-bold text-5xl text-slate-900 tracking-tight">
+      <section id="services-trigger" className="py-20 md:py-32 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 md:mb-20">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-slate-900 tracking-tight">
               What We <span className="text-indigo-600">Do?</span>
             </h2>
-            <p className="mt-4 text-slate-600 text-lg">Comprehensive technology solutions for your business needs.</p>
+            <p className="mt-4 text-slate-600 text-base md:text-lg">Comprehensive technology solutions for your business needs.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((service, idx) => (
               <div 
                 key={service.id}
-                className={`glass-card relative overflow-hidden p-8 rounded-[2.5rem] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(79,70,229,0.15)] group border border-white/60 hover:border-indigo-200 ${idx === 0 || idx === 3 || idx === 4 || idx === 7 ? 'lg:col-span-2' : ''}`}
+                className={`glass-card relative overflow-hidden p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(79,70,229,0.15)] group border border-white/60 hover:border-indigo-200 ${idx === 0 || idx === 3 || idx === 4 || idx === 7 ? 'lg:col-span-2' : ''}`}
               >
                 {/* Subtle Inner Glow */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -130,8 +130,8 @@ export default function Home() {
                   <div className="w-14 h-14 rounded-2xl bg-indigo-50/80 flex items-center justify-center mb-6 border border-indigo-100/50 group-hover:scale-110 transition-transform duration-500">
                     {React.cloneElement(service.icon, { className: 'w-7 h-7 text-indigo-600 mb-0' })}
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">{service.title}</h3>
-                  <p className="text-slate-600 leading-relaxed font-normal">{service.desc}</p>
+                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 tracking-tight">{service.title}</h3>
+                  <p className="text-slate-600 leading-relaxed font-normal text-sm md:text-base">{service.desc}</p>
                 </div>
               </div>
             ))}
@@ -140,11 +140,11 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section: Manual Horizontal Scroll */}
-      <section id="testimonials" className="py-32 relative z-10">
-        <div className="max-w-7xl mx-auto px-6 mb-16 flex justify-between items-end">
+      <section id="testimonials" className="py-20 md:py-32 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-16 flex justify-between items-end">
           <div>
-            <h2 className="font-display font-bold text-5xl text-slate-900 tracking-tight">Client <span className="text-indigo-600">Reviews</span></h2>
-            <p className="mt-4 text-slate-600 text-lg font-medium">Swipe or scroll to see what our clients say.</p>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-slate-900 tracking-tight">Client <span className="text-indigo-600">Reviews</span></h2>
+            <p className="mt-4 text-slate-600 text-base md:text-lg font-medium">Swipe or scroll to see what our clients say.</p>
           </div>
           <div className="hidden md:flex gap-4">
              {/* Decorative hints for scroll */}
@@ -154,12 +154,12 @@ export default function Home() {
         </div>
 
         {/* Horizontal Scroll Container */}
-        <div className="w-full relative px-6 md:px-0">
-          <div className="flex gap-8 overflow-x-auto pb-12 pt-4 snap-x snap-mandatory hide-scrollbar md:pl-6 max-w-7xl mx-auto cursor-grab active:cursor-grabbing">
+        <div className="w-full relative px-4 sm:px-6 md:px-0">
+          <div className="flex gap-5 md:gap-8 overflow-x-auto pb-8 md:pb-12 pt-4 snap-x snap-mandatory hide-scrollbar md:pl-6 max-w-7xl mx-auto cursor-grab active:cursor-grabbing">
             {TESTIMONIALS.map((test, i) => (
-              <div key={i} className="glass-panel w-[350px] md:w-[450px] flex-shrink-0 p-10 rounded-[2.5rem] snap-center hover:-translate-y-2 transition-transform duration-500">
+              <div key={i} className="glass-panel w-[82vw] max-w-[350px] md:w-[450px] flex-shrink-0 p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] snap-center hover:-translate-y-2 transition-transform duration-500">
                 <div className="text-6xl text-indigo-300 leading-none mb-2 font-serif opacity-50">"</div>
-                <p className="text-slate-700 font-medium text-lg mb-10 leading-relaxed min-h-[120px]">
+                <p className="text-slate-700 font-medium text-base md:text-lg mb-8 md:mb-10 leading-relaxed min-h-[120px]">
                   {test.t}
                 </p>
                 <div className="flex items-center gap-5 mt-auto">
@@ -178,13 +178,13 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 relative z-10">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20">
-          <div className="glass-panel p-10 md:p-14 rounded-[3rem]">
-            <h2 className="font-display font-bold text-5xl text-slate-900 mb-4 tracking-tight">
+      <section id="contact" className="py-20 md:py-32 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 md:gap-20">
+          <div className="glass-panel p-8 sm:p-10 md:p-14 rounded-[2rem] md:rounded-[3rem]">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-slate-900 mb-4 tracking-tight">
               Get In <span className="text-indigo-600">Touch</span>
             </h2>
-            <p className="text-slate-600 text-lg mb-10 font-normal">
+            <p className="text-slate-600 text-base md:text-lg mb-10 font-normal">
               Ready to elevate your business with cutting-edge technology? Send us a message and we'll get back to you shortly.
             </p>
 
@@ -199,18 +199,18 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col justify-center">
-            <div className="space-y-12 pl-4 lg:pl-12 border-l-2 border-indigo-100/50">
+            <div className="space-y-8 md:space-y-12 pl-0 md:pl-4 lg:pl-12 border-l-0 md:border-l-2 border-indigo-100/50">
               <div className="group cursor-default">
                 <p className="text-sm text-indigo-600 mb-2 font-bold uppercase tracking-wider transition-colors group-hover:text-indigo-700">Call Us</p>
-                <p className="font-bold text-3xl text-slate-900 group-hover:translate-x-2 transition-transform duration-300">+91 989 009 7984</p>
+                <p className="font-bold text-xl sm:text-2xl md:text-3xl text-slate-900 group-hover:translate-x-2 transition-transform duration-300">+91 989 009 7984</p>
               </div>
               <div className="group cursor-default">
                 <p className="text-sm text-indigo-600 mb-2 font-bold uppercase tracking-wider transition-colors group-hover:text-indigo-700">Email Us</p>
-                <p className="font-bold text-3xl text-slate-900 group-hover:translate-x-2 transition-transform duration-300">contact@anuprayogcreations.in</p>
+                <p className="font-bold text-base sm:text-xl md:text-3xl text-slate-900 group-hover:translate-x-2 transition-transform duration-300 break-all">contact@anuprayogcreations.in</p>
               </div>
               <div className="group cursor-default">
                 <p className="text-sm text-indigo-600 mb-2 font-bold uppercase tracking-wider transition-colors group-hover:text-indigo-700">Visit Us</p>
-                <p className="font-bold text-3xl text-slate-900 group-hover:translate-x-2 transition-transform duration-300">Kothrud, Pune.</p>
+                <p className="font-bold text-xl sm:text-2xl md:text-3xl text-slate-900 group-hover:translate-x-2 transition-transform duration-300">Kothrud, Pune.</p>
               </div>
             </div>
           </div>
