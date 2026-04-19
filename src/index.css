@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#fdfdfd] text-slate-900 font-sans overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/60 backdrop-blur-xl border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)];
+  }
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.03)];
+  }
+  .btn-primary {
+    @apply px-8 py-4 bg-indigo-600 text-white rounded-full font-bold uppercase tracking-wide hover:bg-indigo-700 transition-colors shadow-[0_8px_30px_rgba(79,70,229,0.3)] hover:shadow-[0_12px_40px_rgba(79,70,229,0.4)];
+  }
+  .section-tag {
+    @apply uppercase tracking-widest text-sm font-bold text-indigo-600 bg-indigo-50/80 px-4 py-2 rounded-full border border-indigo-100/50 backdrop-blur-sm;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Ensure typography has absolutely no mirror/translucency */
+h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea {
+  backdrop-filter: none !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+/* Infinite Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  width: max-content;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
