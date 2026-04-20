@@ -2,52 +2,214 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Base Reset & Typography ─────────────────────────────── */
 @layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-[#fdfdfd] text-slate-900 font-sans overflow-x-hidden;
+    @apply font-sans text-slate-950 overflow-x-hidden;
+    background: #f8faff;
+    min-height: 100vh;
+  }
+
+  #root {
+    min-height: 100vh;
+    isolation: isolate;
   }
 }
 
+/* ─── Component Classes ───────────────────────────────────── */
 @layer components {
+
+  /* Glass Panels */
   .glass-panel {
-    @apply bg-white/60 backdrop-blur-xl border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)];
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow:
+      0 8px 32px rgba(0, 132, 255, 0.06),
+      0 2px 8px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255,255,255,0.8);
   }
+
   .glass-card {
-    @apply bg-white/70 backdrop-blur-xl border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.03)];
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid rgba(200, 220, 255, 0.50);
+    box-shadow:
+      0 4px 24px rgba(0, 100, 255, 0.05),
+      0 1px 4px rgba(0, 0, 0, 0.03),
+      inset 0 1px 0 rgba(255,255,255,0.9);
   }
+
+  /* Gradient Text */
+  .gradient-text {
+    background: linear-gradient(135deg, #2563eb 0%, #4f46e5 45%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Primary CTA Button */
   .btn-primary {
-    @apply px-8 py-4 bg-indigo-600 text-white rounded-full font-bold uppercase tracking-wide hover:bg-indigo-700 transition-colors shadow-[0_8px_30px_rgba(79,70,229,0.3)] hover:shadow-[0_12px_40px_rgba(79,70,229,0.4)];
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: #fff;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    box-shadow:
+      0 0 0 1px rgba(79,70,229,0.3),
+      0 8px 28px rgba(79,70,229,0.35),
+      0 0 40px rgba(6,182,212,0.15);
+    transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1),
+                box-shadow 0.25s ease;
+    will-change: transform;
   }
+  .btn-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow:
+      0 0 0 1px rgba(79,70,229,0.5),
+      0 14px 40px rgba(79,70,229,0.45),
+      0 0 60px rgba(6,182,212,0.25);
+  }
+  .btn-primary:active { transform: translateY(0) scale(0.99); }
+
+  /* Secondary Outline Button */
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    border: 2px solid rgba(148, 163, 184, 0.6);
+    color: #334155;
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: rgba(255,255,255,0.5);
+    transition: all 0.25s ease;
+  }
+  .btn-outline:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+    background: rgba(37,99,235,0.06);
+    transform: translateY(-2px);
+  }
+
+  /* Section Tags */
   .section-tag {
-    @apply uppercase tracking-widest text-sm font-bold text-indigo-600 bg-indigo-50/80 px-4 py-2 rounded-full border border-indigo-100/50 backdrop-blur-sm;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 1rem;
+    border-radius: 9999px;
+    background: rgba(37, 99, 235, 0.08);
+    border: 1px solid rgba(37, 99, 235, 0.18);
+    color: #2563eb;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
   }
-  .hide-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
+
+  /* Scrollbar hide */
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+
+  /* Cyan glow dot */
+  .glow-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #00d4ff;
+    box-shadow: 0 0 8px 3px #00d4ff, 0 0 20px 6px rgba(0,212,255,0.4);
   }
 }
 
-/* Ensure typography has absolutely no mirror/translucency */
-h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea {
-  backdrop-filter: none !important;
-  text-shadow: none !important;
-  opacity: 1 !important;
+/* ─── Scroll-reveal Animation ─────────────────────────────── */
+.reveal-el {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-el.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Infinite Marquee Animation */
-@keyframes marquee {
+/* Stagger delay helpers */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ─── Hero Char Animation ─────────────────────────────────── */
+.char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* ─── Service Card Shimmer ────────────────────────────────── */
+.service-card {
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform: skewX(-20deg);
+  transition: none;
+  pointer-events: none;
+}
+.service-card:hover::before {
+  animation: shimmer 0.65s ease forwards;
+}
+@keyframes shimmer {
+  to { left: 160%; }
+}
+
+/* ─── Testimonial Slider ──────────────────────────────────── */
+@keyframes marquee-slow {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-
-.animate-marquee {
-  animation: marquee 30s linear infinite;
+.testimonial-track {
+  animation: marquee-slow 36s linear infinite;
   width: max-content;
 }
+.testimonial-track:hover { animation-play-state: paused; }
 
-.animate-marquee:hover {
-  animation-play-state: paused;
+/* ─── Gradient Orb (CSS background) ──────────────────────── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
 }

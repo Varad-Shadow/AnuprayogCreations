@@ -1,79 +1,90 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react'
+import { Phone, Mail, MapPin, ArrowUpRight } from 'lucide-react'
+
+const SERVICES_LINKS = [
+  'Mobile App Development', 'Web App Development', 'UI/UX Design',
+  'Desktop Apps', 'IT Consulting', 'Data & Analytics',
+]
 
 export default function Footer() {
   const year = new Date().getFullYear()
+
   return (
-    <footer className="relative z-10 pt-14 md:pt-20 pb-8 pointer-events-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="glass-panel p-7 sm:p-10 md:p-16 rounded-[2rem] md:rounded-[3rem] mb-8 border border-white/60 bg-white/70 backdrop-blur-2xl">
+    <footer className="relative z-10 pt-16 md:pt-24 pb-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10">
+
+        {/* Main footer card */}
+        <div className="glass-panel p-8 sm:p-12 md:p-16 rounded-[2.5rem] md:rounded-[3rem] mb-8"
+          style={{ border: '1px solid rgba(200,220,255,0.55)' }}>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-            
-            {/* Brand Column */}
+
+            {/* Brand */}
             <div className="lg:col-span-2">
-              <Link to="/" className="inline-block font-display font-black text-2xl sm:text-3xl text-slate-900 tracking-tighter mb-6">
-                Anuprayog<span className="text-indigo-600">.</span>
+              <Link to="/" className="inline-block font-display font-black text-2xl md:text-3xl text-slate-950 tracking-tighter mb-5">
+                Anuprayog<span className="text-blue-600">.</span>
               </Link>
-              <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-normal pr-0 sm:pr-8 mb-8">
-                Technology Partner for Business. We build digital experiences that drive growth, streamline operations, and exceed expectations.
+              <p className="text-slate-600 text-base leading-relaxed mb-8 max-w-sm">
+                Your Trusted Technology Partner for Business. We build world-class digital experiences that drive growth, streamline operations, and exceed expectations.
               </p>
-              <div className="flex gap-3 sm:gap-4 flex-wrap">
+              <div className="flex gap-3 flex-wrap">
                 {['LinkedIn', 'Twitter', 'Instagram'].map(s => (
-                  <a key={s} href="#" className="px-5 py-2.5 rounded-full border border-slate-200 text-sm font-semibold text-slate-600 hover:border-indigo-200 hover:bg-indigo-50 hover:text-indigo-600 transition-all shadow-sm">
-                    {s}
+                  <a
+                    key={s}
+                    href="#"
+                    className="px-5 py-2.5 rounded-full border border-slate-200 text-sm font-semibold text-slate-600 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 flex items-center gap-1.5"
+                  >
+                    {s} <ArrowUpRight className="w-3 h-3" />
                   </a>
                 ))}
               </div>
             </div>
 
-            {/* Services Links */}
+            {/* Services */}
             <div>
-              <h4 className="font-bold text-slate-900 text-lg mb-6 tracking-tight">Services</h4>
+              <h4 className="font-bold text-slate-950 text-base mb-6 tracking-tight">Services</h4>
               <ul className="space-y-4">
-                {[
-                  { name: 'Mobile App Dev', id: 'mobile' }, 
-                  { name: 'Web App Dev', id: 'web' }, 
-                  { name: 'UI/UX Design', id: 'uiux' }, 
-                  { name: 'Desktop Apps', id: 'desktop' }, 
-                  { name: 'IT Consulting', id: 'consulting' }, 
-                  { name: 'Data & AI', id: 'data' }
-                ].map(s => (
-                  <li key={s.name}>
-                    <a href="#services-trigger" onClick={(e) => { e.preventDefault(); window.lenis?.scrollTo('#services-trigger'); }} className="text-slate-600 hover:text-indigo-600 font-medium transition-colors flex items-center group">
-                      <ArrowRight className="w-4 h-4 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all text-indigo-600 mr-2" />
-                      {s.name}
+                {SERVICES_LINKS.map(name => (
+                  <li key={name}>
+                    <a
+                      href="#services-trigger"
+                      onClick={e => { e.preventDefault(); window.lenis?.scrollTo('#services-trigger') }}
+                      className="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm flex items-center gap-2 group"
+                    >
+                      <span className="w-1 h-1 rounded-full bg-blue-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      {name}
                     </a>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Contact Info */}
+            {/* Contact */}
             <div>
-              <h4 className="font-bold text-slate-900 text-lg mb-6 tracking-tight">Contact Us</h4>
+              <h4 className="font-bold text-slate-950 text-base mb-6 tracking-tight">Contact</h4>
               <ul className="space-y-5">
                 <li>
-                  <a href="tel:+919890097984" className="flex items-center text-slate-600 hover:text-indigo-600 transition-colors group">
-                    <div className="w-10 h-10 rounded-full bg-slate-100 group-hover:bg-indigo-100 flex items-center justify-center mr-4 transition-colors">
-                      <Phone className="w-4 h-4 text-slate-600 group-hover:text-indigo-600" />
+                  <a href="tel:+919890097984" className="flex items-start gap-3 text-slate-600 hover:text-blue-600 transition-colors group">
+                    <div className="w-9 h-9 rounded-xl bg-blue-50 group-hover:bg-blue-100 flex items-center justify-center shrink-0 mt-0.5 transition-colors">
+                      <Phone className="w-4 h-4 text-blue-600" />
                     </div>
-                    <span className="font-medium">+91 989 009 7984</span>
+                    <span className="font-medium text-sm leading-snug">+91 989 009 7984</span>
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:contact@anuprayogcreations.in" className="flex items-center text-slate-600 hover:text-indigo-600 transition-colors group">
-                    <div className="w-10 h-10 rounded-full bg-slate-100 group-hover:bg-indigo-100 flex items-center justify-center mr-4 transition-colors">
-                      <Mail className="w-4 h-4 text-slate-600 group-hover:text-indigo-600" />
+                  <a href="mailto:contact@anuprayogcreations.in" className="flex items-start gap-3 text-slate-600 hover:text-blue-600 transition-colors group">
+                    <div className="w-9 h-9 rounded-xl bg-blue-50 group-hover:bg-blue-100 flex items-center justify-center shrink-0 mt-0.5 transition-colors">
+                      <Mail className="w-4 h-4 text-blue-600" />
                     </div>
-                    <span className="font-medium break-all">contact@anuprayogcreations.in</span>
+                    <span className="font-medium text-sm leading-snug break-all">contact@anuprayogcreations.in</span>
                   </a>
                 </li>
-                <li className="flex items-center text-slate-600">
-                  <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center mr-4 shrink-0">
-                    <MapPin className="w-4 h-4 text-slate-600" />
+                <li className="flex items-start gap-3 text-slate-600">
+                  <div className="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 mt-0.5">
+                    <MapPin className="w-4 h-4 text-blue-600" />
                   </div>
-                  <span className="font-medium leading-tight">Kothrud, Pune, India</span>
+                  <span className="font-medium text-sm leading-snug">Kothrud, Pune, India</span>
                 </li>
               </ul>
             </div>
@@ -81,9 +92,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center px-2 sm:px-8 text-sm font-medium text-slate-500 text-center md:text-left">
-          <p>© {year} Anuprayog Creations. All rights reserved.</p>
-          <p className="mt-2 md:mt-0">Built with <span className="text-red-500 mx-1">♥</span> in Pune, India</p>
+        {/* Bottom bar */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-3 px-2 text-sm font-medium text-slate-400">
+          <p>© {year} Anuprayog Creations Pvt. Ltd. All rights reserved.</p>
+          <p>Built with <span className="text-red-400 mx-1">♥</span> in Pune, India</p>
         </div>
       </div>
     </footer>
